@@ -1,100 +1,90 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# Site settings 配置站点
+title: 'your awesome title'
+description: 'your web description'
+keywords: 'your web keywords, another keywords'
+url: 'https://abc.github.io' # your host
 
-# Site settings
-react:
-  title: Material Bliss
-  name: Andrew Plaza
-  menu_right_subtitle: Blogger || Computer Scientist
-  avatar: http://api.adorable.io/avatar/aplaza@liquidthink.net
-  logo: static/img/logo_theme.jpg
-  email: aplaza@liquidthink.net
-  description: > # this means to ignore newlines until "baseurl:"
-    Write an awesome description for your new site here. You can edit this
-    line in _config.yml. It will appear in your document head meta (for
-    Google search results) and in your feed.xml site description.
-  baseurl: "" # the subpath of your site, e.g. /blog
-  url: "http://test_domain.com:4000" # the base hostname & protocol for your site
-  permalink: /posts/:title
-  social:
-    twitter: http://twitter.com/liquid_think
-    github: http://github.com/InsidiousMind
-    facebook: http://facebook.com/liquidthinknet
-    code: http://livecoding.tv/insidious #livecoding.tv handle
-    google-plus: http://plus.google.com/+LiquidthinkNet #make sure to include the '+'
-    rss: feed.xml
+# nav 中文字符空格：&emsp;
+nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
+  首页: '/'
+  标签: '/tags.html'
+  时间线: '/timeline.html'
+  关于博主: '/about.html'
+  友情链接: '/friendLink.html'
 
+# 博主
+author: true
+name: 'your awesome name'
+NickName: 'your awesome nickname'
+webtitle: 'your awesome webtitle'
+bio: 'your awesome bio'
+about: true
+aboutyou: 'your introduction'
+portraits: '/assets/profile.jpeg' # your portraits image file path
 
+# SNS
+SNS: true
+SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagram', 'weixin', 'Codepen']
+  mail: 'mailto:abc@gmail.com'
+  weixin: '' # 你的微信二维码存放的地址
+  qq: '' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
+  github: ''
+  Codepen: ''
+  weibo: ''
+  instagram: ''
+  Twitter: ''
+  Dribbble: ''
+  Facebook: ''
+  Google: ''
+  zhihu: ''
+  juejin: ''
+  twitch: ''
 
-title: Material Bliss
-name: Andrew Plaza
-menu_right_subtitle: Blogger || Computer Scientist
-avatar: http://api.adorable.io/avatar/aplaza@liquidthink.net
-logo: static/img/logo.png
-email: aplaza@liquidthink.net
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://test_domain.com:4000" # the base hostname & protocol for your site
-permalink: /posts/:title
+# 分页
+paginate: 2
+paginatepath: ['page:num']
 
-twitter_username: liquid_think
-github_username: InsidiousMind
+# since
+footer:
+  since: 2018
 
-
-# Build settings
+# Markdown
 markdown: kramdown
-
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+# 代码高亮 使用rouge
+highlighter: rouge
+# 代码高亮主题使用pygments主题: autumn\ default\ emacs\ friendly\ manni\ murphy\ pastie\ perldoc\ tango 任选一个你喜欢的主题名称填在下面的单引号中
+pygmentsTheme: 'default'
 
-source: src
-destination: public
+# 友情链接
+friends:
+  jekyll: 'https://www.jekyll.com.cn/'
 
-assets:
-  compress:
-    css: sass
-    js: false
+# 评论 最佳体验 在disqus、livere和Gitment之间三选一
+# disqus 评论
+disqus: false
+disqus_url: '' # https://abc.disqus.com/embed.js
+# 来必力评论
+livere: true
+livere_uid: 'MTAyMC8zNDI2OS8xMDgwNg==' # MTAyMC8zNDI2OS8xMDgwNg==
+# Gitment评论 OAuth Application
+Gitment: false
+Gitment_owner: ''  # github用户名
+Gitment_repo: ''  # github博客存放的仓库名
+client_id: ''  # 注册 OAuth Application 后获得的 client_id
+client_secret: ''  # 注册 OAuth Application 后获得的 client_secret
 
-  autowrite: true
-  cache: .asset-cache
-  cache_type: filesystem
-  cdn: www.example.com
-  skip_baseurl_with_cdn: false
-  skip_prefix_with_cdn: false
-  prefix: "/assets"
-  digest: true
+# Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
+social-share: true
+social-share-items: ['qq', 'wechat', 'weibo', 'twitter', 'facebook']
 
-  assets:
-    - "*.png"
-    - "bundle.css"
-    - "bundle.js.map"
-    - "*.svg"
-    - "*.eof"
-    - "*.ttf"
+# 百度统计 在baidu-url里填写自己相关的url代码
+baidu: true
+baidu-url: ''
+# 谷歌分析 在google-ID里填写自己在谷歌分析获得的追踪ID
+google: false
+google-ID: ''
 
-  sources:
-    - src/_assets/css
-    - src/_assets/fonts
-    - src/_assets/img
-    - src/_assets/projects
-
-  features:
-    liquid: false
-    integrity: true
-    automatic_img_size: true
-    automatic_img_alt : true
-
-exclude: ['node_modules', 'Gemfile', '.asset-cache', 'build-prod.sh', 'build-dev.sh']
-
-gems:
-  - jekyll-assets
-  - jekyll_pages_api
-  - jekyll-react
+# 博客头信息备选颜色（该部分在站点中不充当站点变量，将其写在post的头信息中用来充当页面变量）
+color: rgb(154,133,255) rgb(255,90,90) rgb(255,210,32) rgb(98,170,255)
